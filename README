@@ -1,7 +1,11 @@
-24/12/09 15:28
-Bobiscript 				
+Bobiscript
 
-Todo:
-- Arbo Site
-- Design
-- Api
+A faire :
+	Ameliorer le systeme de themes (voir suite)
+	Ajouter fonctions (news,contact,mail).
+	Créer une appli de lecture de script (surement avec Geshi)
+
+Déja Fait :
+	Arborescence site
+	Systeme de template (PHPlib)
+	Systeme de themes (1.0

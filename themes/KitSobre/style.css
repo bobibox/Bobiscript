@@ -1,0 +1,79 @@
+/* CSS Document */
+/* Copyright : Interface par Mara - Découpe par Gounlaf pour Kits-Gratuits.net */
+
+body {
+	background-color:#FFFFFF;
+	color:#606060;
+	font-family:Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size:70%;
+	padding:0;
+	margin:0;
+	}
+	
+div#contenu {
+	background:url('./images/interface/bg.png') repeat-y;
+	width:686px;
+	height:auto;
+	margin:auto;
+	padding-left:41px;
+	padding-right:41px;
+	}
+
+img { display:block; margin:0; padding:0; }
+ul , li { margin:0; padding:0; list-style-type:none; }
+a { color:#606060; text-decoration:none; font-weight:bold; }
+a:hover { color:#D8D8D8; }
+a img { border:0; }
+h1, h2, h3, h4 { margin:0; }
+h2 { font-size:90%; }
+h3 { border-bottom:1px solid #606060; width:676px; padding-top:5px; margin-left:5px; }
+h4 { font-size:80%; font-weight:normal; color:#000000; }
+p { margin:0; padding:5px; }
+div.clear { clear:both; }
+.hid { display:none; }
+.sign { text-align:right; font-size:80%; color:#D8D8D8; }
+
+div#top {
+	background:url('./images/interface/top.png') repeat-x;
+	width:686px;
+	height:7px;
+	}
+	
+div#header {
+	background:url('./images/interface/bg_header.png') repeat-x bottom;
+	width:606px;
+	height:171px;
+	border-bottom:1px solid #B7B7B7;
+	padding-top:25px;
+	padding-left:80px;
+	}
+	
+div#menu {
+	background-color:#616161;
+	width:681px;
+	height:auto;
+	padding:3px 0 3px 5px;
+	color:#FFFFFF;
+	}
+	
+div#menu li { display:inline; }
+div#menu a { color:#FFFFFF; }
+div#menu a:hover { color:#D8D8D8; }
+	
+div#texte {
+	/* Aucun spécification particulière ... il sert juste à structurer le code HTML
+	Cependant, rien ne vous empeche de définir certaines propriétées
+	*/
+	}
+	
+div#bottom {
+	background:url('./images/interface/bottom.png') repeat-x bottom;
+	width:686px;
+	height:auto;
+	text-align:center;
+	padding-bottom:11px;
+	margin-top:10px;
+	}
+	
+div#bottom a { color:#606060; text-decoration:none; font-weight:normal; }
+div#bottom a:hover { color:#D8D8D8; }
