@@ -1,0 +1,4 @@
+<?php
+	echo 'test';
+	echo 'ahaha ça marche !';
+?>
