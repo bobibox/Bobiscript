@@ -8,8 +8,16 @@
  */
 
 $template->set_filenames(array('scripts' => 'scripts.tpl'));
-/*
-   Action à faire
-*/
+
+if(!empty($_GET['view'])){
+	$result = AffichageScript($_GET['view']);
+}
+else{
+	$result = ScanDirectory('fichiers/scripts');
+}
+
+$template->assign_vars(array(
+'SCRIPTS' =>		$result
+));
 $template->assign_var_from_handle('CONTENU', 'scripts');
 ?>
