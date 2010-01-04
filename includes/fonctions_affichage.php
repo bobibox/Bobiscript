@@ -32,6 +32,7 @@ function AffichageScript($script){
 	$geshi->set_line_style('background: #fcfcfc;', 'background: #f0f0f0;');
 
 	$result = $geshi->parse_code();
+        $result .= '<div align=center><a href='.$_SERVER["HTTP_REFERER"].'>Retour</a>';
 	return $result;
 }
 

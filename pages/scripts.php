@@ -6,7 +6,6 @@
  * @version $Id$
  * @copyright 2009
  */
-
 $template->set_filenames(array('scripts' => 'scripts.tpl'));
 
 if(!empty($_GET['view'])){
@@ -17,7 +16,7 @@ else{
 }
 
 $template->assign_vars(array(
-'SCRIPTS' =>		$result
+'SCRIPTS' =>	$result
 ));
 $template->assign_var_from_handle('CONTENU', 'scripts');
 ?>
