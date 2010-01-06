@@ -17,9 +17,10 @@ function RecupMenu($template){
 	}
 }
 
-function AffichageScript($script){
-	$language = str_replace('.','',strstr($script, '.'));
+function AffichageSource($type, $lang, $nom){
+	$language = str_replace('.','',strstr($nom, '.'));
 	$source = '';
+        $script =  'fichiers/'.$type.'/'.$lang.'/'.$nom;
 	if (file_exists($script)){
 		$contenu = file($script);
 		while(list($cle,$val) = each($contenu)) {
@@ -40,14 +41,15 @@ function AffichageScript($script){
 /* Fonction prise sur : */
 function ScanDirectory($Directory){
 $result = '';
-$MyDirectory = opendir($Directory) or die('Erreur');
+$MyDirectory = opendir('fichiers/'.$Directory) or die("Impossible d'ouvrir le dossier");
 while($Entry = @readdir($MyDirectory)) {
-	if(is_dir($Directory.'/'.$Entry)&& $Entry != '.' && $Entry != '..') {
-		$result.= '<h3>'.$Entry.'</h3>';
+	if(is_dir('fichiers/'.$Directory.'/'.$Entry)&& $Entry != '.' && $Entry != '..') {
+		$result .= '<h3>'.$Entry.'</h3>';
 		$result .= ScanDirectory($Directory.'/'.$Entry);
 	}
 	elseif($Entry != '.' && $Entry != '..'){
-		$result.= '<p><a href="'.$_SERVER['REQUEST_URI'].'&view='.$Directory.'/'.$Entry.'">'.$Entry.'</a></p>';
+                $lang =  str_replace('/','',strstr($Directory, '/'));
+		$result.= '<p><a href="'.$_SERVER['REQUEST_URI'].'&lang='.$lang.'&name='.$Entry.'">'.$Entry.'</a></p>';
 	}
 }
 return $result;

@@ -8,11 +8,11 @@
  */
 $template->set_filenames(array('scripts' => 'scripts.tpl'));
 
-if(!empty($_GET['view'])){
-	$result = AffichageScript($_GET['view']);
+if(!empty($_GET['lang']) AND !empty($_GET['name'])){
+	$result = AffichageSource('scripts',$_GET['lang'],$_GET['name']);
 }
 else{
-	$result = ScanDirectory('fichiers/scripts');
+	$result = ScanDirectory('scripts');
 }
 
 $template->assign_vars(array(
