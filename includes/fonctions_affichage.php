@@ -28,7 +28,7 @@ function AffichageScript($script){
 	}
 	$geshi = new GeSHi($source, $language);
 	$geshi->enable_line_numbers(GESHI_FANCY_LINE_NUMBERS, 2);
-        $geshi->set_overall_style(';width:580px;', true);
+        $geshi->set_overall_style('font-size:11px;width:580px;', true);
 	$geshi->set_line_style('background: #fcfcfc;', 'background: #f0f0f0;');
 
 	$result = $geshi->parse_code();

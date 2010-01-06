@@ -38,8 +38,8 @@ $template->pparse('menu');
 
 $template->set_filenames(array('index' => 'index.tpl'));
 /* Affichage du contenu de la page */
-if((!empty($_GET['page'])) AND ($_GET['page'] != 'index')){
-	include('pages/'.$_GET['page'].'.php');
+if((!empty($_GET['page'])) AND ($_GET['page'] != 'index') AND (file_exists('pages/'.$_GET['page'].'.php'))){
+    include('pages/'.$_GET['page'].'.php');
 }
 else{
 	$template->set_filenames(array('news' => 'news.tpl'));
