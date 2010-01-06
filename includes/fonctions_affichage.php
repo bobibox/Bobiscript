@@ -18,7 +18,7 @@ function RecupMenu($template){
 }
 
 function AffichageSource($type, $lang, $nom){
-        if(preg_match("#^/..#", $nom) == TRUE){
+        if(preg_match("#^../#", $nom) == TRUE){
                 $result = "Erreur lors du chargement du script";
         }
         else{
