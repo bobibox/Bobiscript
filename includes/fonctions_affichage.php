@@ -18,7 +18,8 @@ function RecupMenu($template){
 }
 
 function AffichageSource($type, $lang, $nom){
-	$language = str_replace('.','',strstr($nom, '.'));
+        $nom = str_replace('../','',$nom);
+        $language = str_replace('.','',strstr($nom, '.'));
 	$source = '';
         $script =  'fichiers/'.$type.'/'.$lang.'/'.$nom;
 	if (file_exists($script)){
