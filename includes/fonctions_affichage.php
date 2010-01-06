@@ -18,23 +18,27 @@ function RecupMenu($template){
 }
 
 function AffichageSource($type, $lang, $nom){
-        $nom = str_replace('../','',$nom);
-        $language = str_replace('.','',strstr($nom, '.'));
-	$source = '';
-        $script =  'fichiers/'.$type.'/'.$lang.'/'.$nom;
-	if (file_exists($script)){
-		$contenu = file($script);
-		while(list($cle,$val) = each($contenu)) {
-			$source .= $val;
-		}
-	}
-	$geshi = new GeSHi($source, $language);
-	$geshi->enable_line_numbers(GESHI_FANCY_LINE_NUMBERS, 2);
-        $geshi->set_overall_style('font-size:11px;width:580px;', true);
-	$geshi->set_line_style('background: #fcfcfc;', 'background: #f0f0f0;');
+        if(preg_match("#^/..#", $nom) == TRUE){
+                $result = "Erreur lors du chargement du script";
+        }
+        else{
+            $language = str_replace('.','',strstr($nom, '.'));
+            $source = '';
+            $script =  'fichiers/'.$type.'/'.$lang.'/'.$nom;
+            if (file_exists($script)){
+        	    $contenu = file($script);
+               	    while(list($cle,$val) = each($contenu)) {
+                        	$source .= $val;
+                    }
+            }
+            $geshi = new GeSHi($source, $language);
+            $geshi->enable_line_numbers(GESHI_FANCY_LINE_NUMBERS, 2);
+            $geshi->set_overall_style('font-size:11px;width:580px;', true);
+            $geshi->set_line_style('background: #fcfcfc;', 'background: #f0f0f0;');
 
-	$result = $geshi->parse_code();
-        $result .= '<div align=center><a href='.$_SERVER["HTTP_REFERER"].'>Retour</a>';
+            $result = $geshi->parse_code();
+        }
+        $result .= '<div align=center><a href="?page='.$type.'">Retour</a></div>';
 	return $result;
 }
 
