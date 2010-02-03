@@ -14,7 +14,6 @@ connect($DBHost,$DBUser,$DBPass,$DBTable);
 
 $template = new Template('themes/'.$DESIGN.'/templates');
 
-
 /* Declaration du haut et du bas de page, ainsi que de leurs variables */
 $template->set_filenames(array(
 	'header' => 'header.tpl',
